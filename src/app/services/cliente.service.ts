@@ -14,9 +14,9 @@ export class ClienteService {
   ) { 
   }
 
-  listar_clientes_filtro_admin(tipo: any, filtro: any){
+  listar_clientes_filtro_admin(tipo: any, filtro: any, token: any){
   
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    let headers = new HttpHeaders({'Content-Type' : 'application/json', 'Authorization': token});
     return this._http.get('http://localhost:4201/api/listar_clientes_filtro_admin/'+tipo+'/'+filtro, {headers: headers});
     }
 }

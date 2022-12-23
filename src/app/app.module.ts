@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+import { RouterModule } from '@angular/router';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminService } from './services/admin.service';
 import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { IndexClienteComponent } from './components/clientes/index-cliente/index
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbPaginationModule,
+    NgxPaginationModule,
+    RouterModule,
     routing
   ],
   providers: [AdminService ],
