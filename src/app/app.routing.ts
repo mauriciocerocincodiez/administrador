@@ -5,12 +5,17 @@ import { LoginComponent } from "./components/login/login.component";
 
 import { AdminGuard } from "./guards/admin.guard";
 import { IndexClienteComponent } from "./components/clientes/index-cliente/index-cliente.component";
+import { CreateClienteComponent } from "./components/clientes/create-cliente/create-cliente.component";
+import { EditClienteComponent } from "./components/edit-cliente/edit-cliente.component";
 
 const appRoute : Routes = [
 { path: '', component: InicioComponent, canActivate: [AdminGuard]},
 
 {path: 'panel', children: [
- {path: 'clientes', component: IndexClienteComponent, canActivate: [AdminGuard]}
+
+ {path: 'clientes', component: IndexClienteComponent, canActivate: [AdminGuard]},
+ {path: 'clientes/create', component: CreateClienteComponent, canActivate: [AdminGuard]},
+ {path: 'clientes/:id', component: EditClienteComponent, canActivate: [AdminGuard]}
 
 ]},
 

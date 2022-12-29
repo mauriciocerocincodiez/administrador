@@ -14,6 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminService } from './services/admin.service';
 import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
 import { NgxPaginationModule } from "ngx-pagination";
+import { CreateClienteComponent } from './components/clientes/create-cliente/create-cliente.component';
+import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NgxPaginationModule } from "ngx-pagination";
     InicioComponent,
     SidebarComponent,
     LoginComponent,
-    IndexClienteComponent
+    IndexClienteComponent,
+    CreateClienteComponent,
+    EditClienteComponent
   ],
   imports: [
     BrowserModule,

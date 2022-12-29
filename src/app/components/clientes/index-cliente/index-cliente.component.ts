@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { ClienteService } from 'src/app/services/cliente.service';
+declare var iziToast: any;
 
 @Component({
   selector: 'app-index-cliente',
@@ -86,6 +87,28 @@ export class IndexClienteComponent {
       }
      )
      
+  }
+
+
+
+  eliminar(id: any){
+    this._clienteService.eliminar_cliente_admin(id, this.token).subscribe(
+      Response =>{
+        iziToast.show({
+          title: 'SUCCESS',
+          titleColor: '#1DC74C',
+          color: '#FFF',
+          class: 'text-success',
+          position: 'topRight',
+          message: 'Se  elimino el registro correctamente.'
+  });
+        this.init_data();
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+
   }
 
 }
