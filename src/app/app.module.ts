@@ -16,6 +16,8 @@ import { IndexClienteComponent } from './components/clientes/index-cliente/index
 import { NgxPaginationModule } from "ngx-pagination";
 import { CreateClienteComponent } from './components/clientes/create-cliente/create-cliente.component';
 import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
+import { CreateProductoComponent } from './components/productos/create-producto/create-producto.component';
+import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { EditClienteComponent } from './components/edit-cliente/edit-cliente.com
     LoginComponent,
     IndexClienteComponent,
     CreateClienteComponent,
-    EditClienteComponent
+    EditClienteComponent,
+    CreateProductoComponent,
+    IndexProductoComponent
   ],
   imports: [
     BrowserModule,

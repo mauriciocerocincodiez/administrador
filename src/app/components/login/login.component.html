@@ -1,34 +1,43 @@
-<div class="row" style="width: 100%;
-height: 100%; margin-top: 40px;">
-            <div class=" col-lg-10 mx-auto" style="display: flex;
-            align-items: center;">
-                <div class="modal-body px-md-5 px-4">
-                    <h3 class="modal-title mt-4 mb-0 text-center mb-5">Inicio de Sesion</h3>
+<div class="row" style="width: 100%; height: 100%; margin-top: 40px">
+  <div class="col-lg-10 mx-auto" style="display: flex; align-items: center">
+    <div class="modal-body px-md-5 px-4">
+      <h3 class="modal-title mt-4 mb-0 text-center mb-5">Inicio de Sesion</h3>
 
-                     <form #f="ngForm" (ngSubmit)="f.form.valid && login(f)" >
-
-                      <div class="form-group">
-                        <label for="signin-email">Correo</label>
-                        <input type="email" class="form-control" name="email"  ngModel placeholder="Tu correo" required="">
-                      </div>
-                      <div class="form-group">
-                        <label for="signin-password" class="form-label">Contraseña</label>
-                        <div class="cs-password-toggle input-group-overlay">
-                          <input type="password" class="form-control appended-form-control" name="password" ngModel placeholder="Tu password" required="">
-                          <div class="input-group-append-overlay">
-                            <label class="btn cs-password-toggle-btn input-group-text">
-                              <input type="checkbox" class="custom-control-input">
-                              <i class="cxi-eye cs-password-toggle-indicator"></i>
-                              <span class="sr-only">Ingresar</span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                     
-                      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                     
-                    </form>
-                  </div>
-            </div>
+      <form #f="ngForm" (ngSubmit)="f.form.valid && login(f)">
+        <div class="form-group">
+          <label for="signin-email">Correo</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            ngModel
+            placeholder="Tu correo"
+            required=""
+          />
         </div>
-  
+        <div class="form-group">
+          <label for="signin-password" class="form-label">Contraseña</label>
+          <div class="cs-password-toggle input-group-overlay">
+            <input
+              type="password"
+              class="form-control appended-form-control"
+              name="password"
+              ngModel
+              placeholder="Tu password"
+              required=""
+            />
+            <div class="input-group-append-overlay">
+              <label class="btn cs-password-toggle-btn input-group-text">
+                <input type="checkbox" class="custom-control-input" />
+                <i class="cxi-eye cs-password-toggle-indicator"></i>
+                <span class="sr-only">Ingresar</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+    </div>
+  </div>
+</div>
