@@ -27,6 +27,10 @@ export class IndexProductoComponent {
     this.filtro_buscar();
     
   }
+  
+  eliminar(id: any){
+    
+  }
 
   filtro_buscar(){
     this._productoServece.listar_producto_admin(this.filtro_titulo, this.token).subscribe(

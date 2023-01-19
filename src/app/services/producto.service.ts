@@ -32,4 +32,34 @@ export class ProductoService {
     return this._http.get('http://localhost:4201/api/listar_producto_admin/'+filtro, {headers: headers});
     }
 
+    obtener_producto_admin(id: any, token: any){
+    
+      let headers = new HttpHeaders({'Content-Type' : 'application/json', 'Authorization': token});
+      return this._http.get('http://localhost:4201/api/obtener_producto_admin/'+id, {headers: headers});
+      }
+
+
+      actualizar_producto_admin(id: any, data: any, file: any, token: any) {
+        let headers = new HttpHeaders({ 'Authorization': token });
+    
+        const fd = new FormData();
+        fd.append('titulo', data.titulo);
+        fd.append('stock', data.cantidad);
+        fd.append('precio', data.precio);
+        fd.append('categoria', data.categoria);
+        fd.append('descripcion', data.descripcion);
+        fd.append('portada', file);
+    
+        return this._http.post(
+          'http://localhost:4201/api/actualizar_producto_admin/'+id,
+          fd,
+          { headers: headers }
+        );
+      }
+
+      obtener_inventario_admin(id: any, token: any){
+    
+        let headers = new HttpHeaders({'Content-Type' : 'application/json', 'Authorization': token});
+        return this._http.get('http://localhost:4201/api/obtener_inventario_admin/'+id, {headers: headers});
+        }
 }
