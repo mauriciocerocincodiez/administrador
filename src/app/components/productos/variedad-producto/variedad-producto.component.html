@@ -1,0 +1,96 @@
+<app-sidebar></app-sidebar>
+      <section class="col-md-12">
+        <div class="col-md-12">
+
+       
+
+          <!-- Side navigation (Off-canvas)-->
+          
+
+          <!-- Page title-->
+          <div class="border-bottom pt-5 mt-2 mb-5">
+            <h1 class="mt-2 mt-md-4 mb-3 pt-5">Variedades</h1>
+            <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+              <p class="text-muted">Este módulo se estableve las Variedades de la tineda.</p>
+
+            </div>
+          </div>
+
+         
+                <div class="card-body">
+                  <div style="max-width: 48rem;">
+                    <div class="form-group row align-items-center">
+                      <div class="input-group">
+                      <label class="col-md-4 col-form-label font-weight-medium" for="text-input">Nombre Variedad </label>
+                     
+                        <input class="form-control" type="text" name="nombre_variedad" [(ngModel)]="nombre_variedad" placeholder="Nombre Variedad" >
+                      
+                      </div>
+                      <label class="col-md-3 col-form-label font-weight-medium" for="text-input">Nueva Variedad</label>
+                      <div class="col-md-9">
+                        <div class="input-group">
+                        <input class="form-control" type="text" placeholder="nueva variedad" name="nueva_variedad " [(ngModel)]="nueva_variedad" >
+                         <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" (click)="agregar_variedades()" >Agregar</button>
+                         </div>
+                      </div>
+                    </div> 
+                    </div>
+                  
+                    </div>
+                    <div class="form-group row align-items-center">
+                      
+                    
+                      <div class="col-md-3">
+                      
+                      </div>
+                      <div class="col-md-9">
+                        <div class="table-responsive mt-3">
+                          <table class="table table-sm"  *ngIf="producto">
+                            <thead class="thead-dark">
+                              <tr>
+                         
+                                <th>Titulo </th>
+                                <th>Eliminar</th>
+                               
+                              </tr>
+                            </thead>
+                            <ng-container *ngFor="let item of producto">
+                            <ng-container *ngIf="item.variedades.length == 0">
+                                <tbody >
+                                    <tr>
+                                      <td colspan="2" class="text-center" >
+                                        <span class="text-muted" > No hay variedades disponibles</span>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                            </ng-container>
+                            <ng-container *ngIf="item.variedades.length >= 1">
+                                <tbody *ngFor="let item of item.variedades; let indice = index" >
+                                    <tr>
+                                      <td> {{ item.titulo}}</td>
+                                      <td> <a style="cursor: pointer;" class="text-danger" (click)="eliminar_variedad(indice)" >Eliminar</a></td>
+                                    </tr>
+                                  </tbody>
+                            </ng-container>
+                          </ng-container>  
+                           
+                          </table>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    
+                      
+                    </div>
+                  </div>
+                 
+                
+                <div class="card-footer">
+                  <button class="btn btn-primary mr-3" type="button" (click)="actualizar()" >Guardar cambios</button>
+                </div>
+            
+
+        
+        
+      </section>

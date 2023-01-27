@@ -13,16 +13,18 @@ import { JwtHelperService, JwtModule } from "@auth0/angular-jwt";
 
 export class AdminService {
 
+  public url;
 
   constructor(
     private _http: HttpClient
   ) { 
+    this.url = GLOBAL.url;
   }
 
   login_admin(data: any){
   
   let headers = new HttpHeaders().set('Content-Type', 'application/json');
-  return this._http.post('http://localhost:4201/api/login_admin', data, {headers: headers});
+  return this._http.post(this.url+'login_admin', data, {headers: headers});
   }
 
   getToken(){

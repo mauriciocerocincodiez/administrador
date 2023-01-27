@@ -20,7 +20,12 @@
                  <input class="form-control mb-3 mr-sm-4" type="text" name="filtro_titulo" (keyup)="filtro_buscar()" [(ngModel)]="filtro_titulo" placeholder="Titulo del Producto">
             </div>
             </form>
+            <div class="col-12" >
+              <button class="btn btn-success" (click)="descargar_excel()" >Exportar a Excel</button>
+             </div>
         </div>
+
+        
        
         <div class="card-body">
             <div class="table-responsive">
@@ -28,16 +33,18 @@
                   <thead class="thead-dark">
                     <tr>
                       <th>#</th>
+                      <th>Imagen</th>
                       <th>Titulo</th>
                       <th>Cantidad</th>
                       <th>Precio</th>
                       <th>Descripcion</th>
-                      <th>Opciones</th>
+                      <th>Opciones  </th>
                     </tr>
                   </thead>
                   <tbody *ngFor="let item of producto | paginate: { itemsPerPage: 10, currentPage: page }; let indice = index" >
                     <tr>
                       <th scope="row">{{indice+1}} </th>
+                      <td><img style="width: 50px" [src]="url+'obtener_portada/'+item.portada" ></td>
                       <td> {{item.titulo}} </td>
                       <td> {{item.stock}} </td>
                       <td> {{item.precio}} </td>
@@ -50,6 +57,8 @@
                             <div class="dropdown-menu">
                               <a [routerLink]="['/panel/productos',item._id]" class="dropdown-item">Editar</a>
                               <a [routerLink]="['/panel/productos/inventario',item._id]" class="dropdown-item">Inventario</a>
+                              <a [routerLink]="['/panel/productos-variedades',item._id]" class="dropdown-item">Variedades</a>
+                              <a [routerLink]="['/panel/productos-galeria',item._id]" class="dropdown-item">Galeria</a>
                              
                               </div>
                           </div>

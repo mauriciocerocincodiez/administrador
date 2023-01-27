@@ -15,6 +15,7 @@ declare var $: any;
 export class CreateProductoComponent {
   public producto: any = {};
   public file: any = undefined;
+  public galeria = [];
   public imgSelect: any | ArrayBuffer = 'assets/img/01.jpg';
   public token;
 
@@ -31,7 +32,6 @@ export class CreateProductoComponent {
   registro(registroForm: NgForm) {
     if (registroForm.valid) {
       console.log(this.producto);
-
       this._productoServece
         .registro_producto_admin(this.producto, this.file, this.token)
         .subscribe(

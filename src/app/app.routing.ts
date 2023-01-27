@@ -11,6 +11,8 @@ import { CreateProductoComponent } from "./components/productos/create-producto/
 import { IndexProductoComponent } from "./components/productos/index-producto/index-producto.component";
 import { UpdateProductoComponent } from "./components/productos/update-producto/update-producto.component";
 import { InventarioProductoComponent } from "./components/productos/inventario-producto/inventario-producto.component";
+import { VariedadProductoComponent } from "./components/productos/variedad-producto/variedad-producto.component";
+import { GaleriaProductoComponent } from "./components/productos/galeria-producto/galeria-producto.component";
 
 const appRoute : Routes = [
 { path: '', component: InicioComponent, canActivate: [AdminGuard]},
@@ -25,6 +27,8 @@ const appRoute : Routes = [
  {path: 'productos', component: IndexProductoComponent, canActivate: [AdminGuard]},
  {path: 'productos/:id', component: UpdateProductoComponent, canActivate: [AdminGuard]},
  {path: 'productos/inventario/:id', component: InventarioProductoComponent, canActivate: [AdminGuard]},
+ {path: 'productos-variedades/:id', component: VariedadProductoComponent, canActivate: [AdminGuard]},
+ {path: 'productos-galeria/:id', component: GaleriaProductoComponent, canActivate: [AdminGuard]},
  
 
 ]},
